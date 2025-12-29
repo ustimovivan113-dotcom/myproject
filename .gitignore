@@ -1,0 +1,19 @@
+# PyCharm
+.idea/
+
+# Виртуальное окружение
+venv/
+env/
+
+# БД
+db.sqlite3
+
+# Секреты
+.env
+
+# Медиа (загруженные файлы)
+media/
+
+# Byte-compiled
+__pycache__/
+*.py[cod]
