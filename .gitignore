@@ -1,19 +1,20 @@
 # PyCharm
 .idea/
 
-# Виртуальное окружение
+# Virtual env
 venv/
 env/
 
-# БД
+# Django
+*.pyc
+__pycache__/
 db.sqlite3
-
-# Секреты
-.env
-
-# Медиа (загруженные файлы)
 media/
 
-# Byte-compiled
-__pycache__/
-*.py[cod]
+# Env files
+.env
+!.env.example
+
+# Other
+*.log
+.DS_Store
