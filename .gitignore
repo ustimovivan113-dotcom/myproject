@@ -1,0 +1,20 @@
+# PyCharm
+.idea/
+
+# Virtual env
+venv/
+env/
+
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+
+# Env files
+.env
+!.env.example
+
+# Other
+*.log
+.DS_Store
