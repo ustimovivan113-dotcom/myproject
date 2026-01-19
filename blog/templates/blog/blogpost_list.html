@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Блог{% endblock %}
+
+{% block content %}
+<h1>Блог</h1>
+<a href="{% url 'blogpost_create' %}" class="btn btn-success mb-3">Создать запись</a>
+<div class="row">
+    {% for blogpost in blogposts %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                {% if blogpost.preview %}
+                    <img src="{{ blogpost.preview.url }}" class="card-img-top" alt="{{ blogpost.title }}">
+                {% else %}
+                    <p class="card-img-top text-center">Превью отсутствует</p>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ blogpost.title }}</h5>
+                    <p class="card-text">{{ blogpost.content|truncatechars:100 }}</p>
+                    <p class="card-text"><small class="text-muted">Просмотры: {{ blogpost.views_count }}</small></p>
+                    <a href="{% url 'blogpost_detail' blogpost.pk %}" class="btn btn-primary">Подробнее</a>
+                    <a href="{% url 'blogpost_update' blogpost.pk %}" class="btn btn-warning">Редактировать</a>
+                    <a href="{% url 'blogpost_delete' blogpost.pk %}" class="btn btn-danger">Удалить</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
